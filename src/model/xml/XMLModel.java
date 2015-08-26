@@ -8,6 +8,7 @@ public class XMLModel {
 	private String dbUrl;
 	private String dbUserName;
 	private String dbPassword;
+	private String tableName;
 	
 	public XMLModel() {
 		// TODO Auto-generated constructor stub
@@ -16,7 +17,7 @@ public class XMLModel {
 	
 
 	public XMLModel(String driverPath, String driverName, String beanName, String beanJavaFilePath, String dbUrl,
-			String dbUserName, String dbPassword) {
+			String dbUserName, String dbPassword,String tableName) {
 		super();
 		this.driverPath = driverPath;
 		this.driverName = driverName;
@@ -25,6 +26,7 @@ public class XMLModel {
 		this.dbUrl = dbUrl;
 		this.dbUserName = dbUserName;
 		this.dbPassword = dbPassword;
+		this.tableName = tableName;
 	}
 
 
@@ -85,4 +87,17 @@ public class XMLModel {
 		this.dbPassword = dbPassword;
 	}
 
+
+
+	public String getTableName() {
+		return tableName;
+	}
+
+
+
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+	}
+	
+	
 }
