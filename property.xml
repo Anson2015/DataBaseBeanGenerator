@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<property>
+    <driverPath>F:\javaee\postgresql\JDBC\postgresql-9.4-1200.jdbc4.jar</driverPath>
+	<driverName>org.postgresql.Driver</driverName>
+    <beanName>Users</beanName>
+    <beanJavaFilePath>d:/</beanJavaFilePath>
+    <dbUrl>localhost:5432/app</dbUrl>
+    <dbUserName>root</dbUserName>
+    <dbPassword>abc!@#</dbPassword>
+    <tableName>users</tableName>
+</property>
+
+
+<!--     private String driverPath;
+    private String driverName;
+    private String beanName;
+    private String beanJavaFilePath;
+    private String dbUrl;
+    private String dbUserName;
+    private String dbPassword;
+    private String tableName; -->

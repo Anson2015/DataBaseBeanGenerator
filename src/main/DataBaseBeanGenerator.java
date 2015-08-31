@@ -15,7 +15,12 @@ import model.xml.XMLModel;
 public class DataBaseBeanGenerator {
 
 	public static void main(String[] args) throws Exception {
-		File file = new File("");
+		File tempFile = new File("");
+		String tempPath = tempFile.getCanonicalPath();
+		System.out.println(tempPath);
+		tempPath = tempFile.getAbsolutePath();
+		System.out.println(tempPath);
+		File file = new File(tempPath+File.separator);
 		FileFilter fileFilter = new FileFilter() {
 			@Override
 			public boolean accept(File pathname) {
@@ -24,6 +29,7 @@ public class DataBaseBeanGenerator {
 				return acceptable;
 			}
 		};
+//		String temp =file.
 		File[] files = file.listFiles(fileFilter);
 		XMLModel model = XMLFileAnalysis.getXMLFileContent(files[0].getAbsolutePath());
 		ExternClassLoader.getDataBaseDriver(model.getDriverPath(), model.getDriverName());

@@ -27,8 +27,8 @@ public class XMLFileAnalysis {
 		for(Element e :list){
 			String propertyName = e.getName();
 			String methodName = "set"+propertyName.substring(0, 1).toUpperCase()+propertyName.substring(1);
-			Method m = XMLModel.class.getMethod(methodName);
-			m.invoke(XMLModel.class, new Object[]{e.getText()});
+			Method m = xmlModel.getClass().getDeclaredMethod(methodName, String.class);
+			m.invoke(xmlModel, e.getText());
 		}
 		return xmlModel;
 	}
