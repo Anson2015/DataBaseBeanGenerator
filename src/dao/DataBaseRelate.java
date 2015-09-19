@@ -2,6 +2,7 @@ package dao;
 
 import java.net.MalformedURLException;
 import java.sql.Connection;
+import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -31,7 +32,8 @@ public class DataBaseRelate {
 		String userName = model.getDbUserName();
 		String password = model.getDbPassword();
 		String tableName = model.getTableName();
-		ExternClassLoader.getDataBaseDriver(driverPath, className);
+//		Driver driver = (Driver) ExternClassLoader.getDataBaseDriver(driverPath, className).newInstance();
+		Class.forName("org.postgresql.Driver");
 		Connection conn = DriverManager.getConnection(url,userName,password);
 		String sql = " SELECT a.attnum,a.attname AS field,t.typname AS type,"
 				+ " a.attlen AS length,a.atttypmod AS lengthvar,a.attnotnull AS notnull "
@@ -78,6 +80,8 @@ public class DataBaseRelate {
 			return "Date";
 		}else if(db.contains("bool")){
 			return "Boolean";
+		}else if(db.contains("numeric")){
+			return "BigDecimal";
 		}else{
 			return "String";
 		}

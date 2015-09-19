@@ -33,6 +33,7 @@ public class DataBaseBeanGenerator {
 		File[] files = file.listFiles(fileFilter);
 		XMLModel model = XMLFileAnalysis.getXMLFileContent(files[0].getAbsolutePath());
 		ExternClassLoader.getDataBaseDriver(model.getDriverPath(), model.getDriverName());
+//		Class.forName("org.postgresql.Driver");
 		DataBaseRelate dbr = new DataBaseRelate();
 		ResultSet rs = dbr.getResultSet(model);
 		Map<String,String> map = dbr.getTableContent(rs);

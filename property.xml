@@ -2,12 +2,12 @@
 <property>
     <driverPath>F:\javaee\postgresql\JDBC\postgresql-9.4-1200.jdbc4.jar</driverPath>
 	<driverName>org.postgresql.Driver</driverName>
-    <beanName>Users</beanName>
-    <beanJavaFilePath>d:/</beanJavaFilePath>
-    <dbUrl>localhost:5432/app</dbUrl>
+    <beanName>VideoLiveExt</beanName>
+    <beanJavaFilePath>F:\workspace\DataBaseBeanGenerator\src\dao\</beanJavaFilePath>
+    <dbUrl>jdbc:postgresql://localhost:5432/app</dbUrl>
     <dbUserName>root</dbUserName>
     <dbPassword>abc!@#</dbPassword>
-    <tableName>users</tableName>
+    <tableName>videoliveext</tableName>
 </property>
 
 
