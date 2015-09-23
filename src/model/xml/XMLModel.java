@@ -1,50 +1,28 @@
 package model.xml;
 
 public class XMLModel {
-	private String driverPath;
-	private String driverName;
 	private String beanName;
 	private String beanJavaFilePath;
 	private String dbUrl;
 	private String dbUserName;
 	private String dbPassword;
 	private String tableName;
+	private String packageName;
 	
 	public XMLModel() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	
 
-	public XMLModel(String driverPath, String driverName, String beanName, String beanJavaFilePath, String dbUrl,
-			String dbUserName, String dbPassword,String tableName) {
+	public XMLModel(String beanName, String beanJavaFilePath, String dbUrl, String dbUserName, String dbPassword,
+			String tableName, String packageName) {
 		super();
-		this.driverPath = driverPath;
-		this.driverName = driverName;
 		this.beanName = beanName;
 		this.beanJavaFilePath = beanJavaFilePath;
 		this.dbUrl = dbUrl;
 		this.dbUserName = dbUserName;
 		this.dbPassword = dbPassword;
 		this.tableName = tableName;
-	}
-
-
-
-	public String getDriverPath() {
-		return driverPath;
-	}
-
-	public void setDriverPath(String driverPath) {
-		this.driverPath = driverPath;
-	}
-
-	public String getDriverName() {
-		return driverName;
-	}
-
-	public void setDriverName(String driverName) {
-		this.driverName = driverName;
+		this.packageName = packageName;
 	}
 
 	public String getBeanName() {
@@ -87,16 +65,20 @@ public class XMLModel {
 		this.dbPassword = dbPassword;
 	}
 
-
-
 	public String getTableName() {
 		return tableName;
 	}
 
-
-
 	public void setTableName(String tableName) {
 		this.tableName = tableName;
+	}
+
+	public String getPackageName() {
+		return packageName;
+	}
+
+	public void setPackageName(String packageName) {
+		this.packageName = packageName;
 	}
 	
 	

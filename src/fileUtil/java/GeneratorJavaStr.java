@@ -15,8 +15,9 @@ public class GeneratorJavaStr {
 	 * @param filePath 生成文件的路径
 	 * @return
 	 */
-	public static String getJavaStr(String className,Map<String , String> map,String filePath){
-		String header = getPackage(filePath);
+	public static String getJavaStr(String className,Map<String , String> map,String filePath,String packageName){
+//		String header = getPackage(filePath);
+		String header = "package " + packageName + ";\n\n";
 		String javaStr = getTempJavaStr(className,map,header);
 		return javaStr;	
 	}

@@ -2,15 +2,13 @@ package dao;
 
 import java.net.MalformedURLException;
 import java.sql.Connection;
-import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
-import externClassLoader.ExternClassLoader;
 import model.xml.XMLModel;
 
 public class DataBaseRelate {
@@ -25,9 +23,9 @@ public class DataBaseRelate {
 	 * @throws ClassNotFoundException
 	 * @throws SQLException
 	 */
-	public ResultSet getResultSet(XMLModel model) throws MalformedURLException, InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{
-		String driverPath = model.getDriverPath();
-		String className = model.getDriverName();
+	public ResultSet getResultSet(XMLModel model) throws 
+		MalformedURLException, InstantiationException, 
+			IllegalAccessException, ClassNotFoundException, SQLException{
 		String url = model.getDbUrl();
 		String userName = model.getDbUserName();
 		String password = model.getDbPassword();
@@ -39,6 +37,7 @@ public class DataBaseRelate {
 				+ " a.attlen AS length,a.atttypmod AS lengthvar,a.attnotnull AS notnull "
 				+ " FROM pg_class c,pg_attribute a,pg_type t WHERE c.relname = ?"
 				+ " and a.attnum > 0 and a.attrelid = c.oid and a.atttypid = t.oid  ORDER BY a.attnum ";
+//		System.out.println(sql);
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, tableName);
 		ResultSet rs = pstmt.executeQuery();
@@ -52,7 +51,7 @@ public class DataBaseRelate {
 	 * @throws SQLException
 	 */
 	public Map<String,String> getTableContent(ResultSet rs) throws SQLException{
-		Map<String,String> map = new HashMap<String,String>();
+		Map<String,String> map = new LinkedHashMap<String,String>();
 		while(rs.next()){
 			String field = rs.getString("field");
 			String type = rs.getString("type");

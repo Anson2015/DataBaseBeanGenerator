@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.util.Map;
 
 import dao.DataBaseRelate;
-import externClassLoader.ExternClassLoader;
 import fileUtil.java.GeneratorJavaFile;
 import fileUtil.java.GeneratorJavaStr;
 import fileUtil.xml.XMLFileAnalysis;
@@ -15,11 +14,9 @@ import model.xml.XMLModel;
 public class DataBaseBeanGenerator {
 
 	public static void main(String[] args) throws Exception {
+		System.out.println("tool is excuting...");
 		File tempFile = new File("");
-		String tempPath = tempFile.getCanonicalPath();
-		System.out.println(tempPath);
-		tempPath = tempFile.getAbsolutePath();
-		System.out.println(tempPath);
+		String tempPath = tempFile.getAbsolutePath();
 		File file = new File(tempPath+File.separator);
 		FileFilter fileFilter = new FileFilter() {
 			@Override
@@ -32,13 +29,14 @@ public class DataBaseBeanGenerator {
 //		String temp =file.
 		File[] files = file.listFiles(fileFilter);
 		XMLModel model = XMLFileAnalysis.getXMLFileContent(files[0].getAbsolutePath());
-		ExternClassLoader.getDataBaseDriver(model.getDriverPath(), model.getDriverName());
+//		ExternClassLoader.getDataBaseDriver(model.getDriverPath(), model.getDriverName());
 //		Class.forName("org.postgresql.Driver");
 		DataBaseRelate dbr = new DataBaseRelate();
 		ResultSet rs = dbr.getResultSet(model);
 		Map<String,String> map = dbr.getTableContent(rs);
-		String content = GeneratorJavaStr.getJavaStr(model.getBeanName(), map, model.getBeanJavaFilePath());
+		String content = GeneratorJavaStr.getJavaStr(model.getBeanName(), map, model.getBeanJavaFilePath(),model.getPackageName());
 		GeneratorJavaFile.translateString2File(content, model.getBeanJavaFilePath(), model.getBeanName()+".java");
+		System.out.println("done ");
 	}
 
 }
