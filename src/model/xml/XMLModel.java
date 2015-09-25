@@ -1,6 +1,8 @@
 package model.xml;
 
 public class XMLModel {
+	private String driverName;
+	private String driverPath;
 	private String beanName;
 	private String beanJavaFilePath;
 	private String dbUrl;
@@ -13,9 +15,11 @@ public class XMLModel {
 		// TODO Auto-generated constructor stub
 	}
 
-	public XMLModel(String beanName, String beanJavaFilePath, String dbUrl, String dbUserName, String dbPassword,
-			String tableName, String packageName) {
+	public XMLModel(String driverName, String driverPath, String beanName, String beanJavaFilePath, String dbUrl,
+			String dbUserName, String dbPassword, String tableName, String packageName) {
 		super();
+		this.driverName = driverName;
+		this.driverPath = driverPath;
 		this.beanName = beanName;
 		this.beanJavaFilePath = beanJavaFilePath;
 		this.dbUrl = dbUrl;
@@ -23,6 +27,22 @@ public class XMLModel {
 		this.dbPassword = dbPassword;
 		this.tableName = tableName;
 		this.packageName = packageName;
+	}
+
+	public String getDriverName() {
+		return driverName;
+	}
+
+	public void setDriverName(String driverName) {
+		this.driverName = driverName;
+	}
+
+	public String getDriverPath() {
+		return driverPath;
+	}
+
+	public void setDriverPath(String driverPath) {
+		this.driverPath = driverPath;
 	}
 
 	public String getBeanName() {
@@ -80,6 +100,5 @@ public class XMLModel {
 	public void setPackageName(String packageName) {
 		this.packageName = packageName;
 	}
-	
 	
 }

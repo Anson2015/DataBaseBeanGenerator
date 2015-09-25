@@ -1,4 +1,4 @@
-package fileUtil.xml;
+package util.file.xml;
 
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
