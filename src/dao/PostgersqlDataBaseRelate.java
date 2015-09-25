@@ -5,13 +5,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import dao.interfaces.DataBaseRelate;
-import model.xml.XMLModel;
+import model.xml.Bean;
 
 public class PostgersqlDataBaseRelate implements DataBaseRelate {
 	
 
-	public ResultSet getResultSet(XMLModel model,Connection conn) throws Exception{
-		String tableName = model.getTableName();
+	public ResultSet getResultSet(Bean bean,Connection conn) throws Exception{
+		String tableName = bean.getTable();
 //		Driver driver = (Driver) ExternClassLoader.getDataBaseDriver(driverPath, className).newInstance();
 //		Class.forName("org.postgresql.Driver");
 //		Connection conn = ExternClassLoader.getDataBaseDriver(model);

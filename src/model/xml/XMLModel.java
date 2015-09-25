@@ -1,32 +1,28 @@
 package model.xml;
 
+import java.util.List;
+
 public class XMLModel {
 	private String driverName;
 	private String driverPath;
-	private String beanName;
-	private String beanJavaFilePath;
 	private String dbUrl;
 	private String dbUserName;
 	private String dbPassword;
-	private String tableName;
-	private String packageName;
+	private List<Bean> beans;
 	
 	public XMLModel() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public XMLModel(String driverName, String driverPath, String beanName, String beanJavaFilePath, String dbUrl,
-			String dbUserName, String dbPassword, String tableName, String packageName) {
+	public XMLModel(String driverName, String driverPath, String dbUrl, String dbUserName, String dbPassword,
+			List<Bean> beans) {
 		super();
 		this.driverName = driverName;
 		this.driverPath = driverPath;
-		this.beanName = beanName;
-		this.beanJavaFilePath = beanJavaFilePath;
 		this.dbUrl = dbUrl;
 		this.dbUserName = dbUserName;
 		this.dbPassword = dbPassword;
-		this.tableName = tableName;
-		this.packageName = packageName;
+		this.beans = beans;
 	}
 
 	public String getDriverName() {
@@ -43,22 +39,6 @@ public class XMLModel {
 
 	public void setDriverPath(String driverPath) {
 		this.driverPath = driverPath;
-	}
-
-	public String getBeanName() {
-		return beanName;
-	}
-
-	public void setBeanName(String beanName) {
-		this.beanName = beanName;
-	}
-
-	public String getBeanJavaFilePath() {
-		return beanJavaFilePath;
-	}
-
-	public void setBeanJavaFilePath(String beanJavaFilePath) {
-		this.beanJavaFilePath = beanJavaFilePath;
 	}
 
 	public String getDbUrl() {
@@ -85,20 +65,11 @@ public class XMLModel {
 		this.dbPassword = dbPassword;
 	}
 
-	public String getTableName() {
-		return tableName;
+	public List<Bean> getBeans() {
+		return beans;
 	}
 
-	public void setTableName(String tableName) {
-		this.tableName = tableName;
+	public void setBeans(List<Bean> beans) {
+		this.beans = beans;
 	}
-
-	public String getPackageName() {
-		return packageName;
-	}
-
-	public void setPackageName(String packageName) {
-		this.packageName = packageName;
-	}
-	
 }

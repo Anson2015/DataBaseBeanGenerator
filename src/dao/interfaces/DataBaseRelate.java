@@ -3,7 +3,7 @@ package dao.interfaces;
 import java.sql.Connection;
 import java.sql.ResultSet;
 
-import model.xml.XMLModel;
+import model.xml.Bean;
 
 public interface DataBaseRelate {
 	
@@ -14,6 +14,6 @@ public interface DataBaseRelate {
 	 * @return
 	 * @throws Exception
 	 */
-	public ResultSet getResultSet(XMLModel model,Connection conn) throws Exception;
+	public ResultSet getResultSet(Bean bean,Connection conn) throws Exception;
 	
 }

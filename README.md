@@ -9,6 +9,10 @@ it's a simple tool which can generate a bean denpends on the database tables
 
 ##2.1 20150925 (version 2.0)
 1.change the structure of the properties file
- * add jdbc driver path adn driver name which means could load the jdbc driver dynamically.
+ * add jdbc driver path and driver name which means could load the jdbc driver dynamically.
  
 2.expand the support of database. Until now it could support oracle,mysql,postgresql.
+
+##2.2 20150926 (version 2.1)
+1.change the structure of the properties file.
+2 users could generator different bean in different packages in the same time;
