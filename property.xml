@@ -2,11 +2,10 @@
 <property>
     <driverPath>F:\javaee\postgresql\JDBC\postgresql-9.4-1200.jdbc4.jar</driverPath>
     <driverName>org.postgresql.Driver</driverName>
-    <dbUrl>jdbc:postgresql://localhost:5432/app</dbUrl>
+    <dbUrl>jdbc:postgresql://localhost:5432/tour</dbUrl>
     <dbUserName>root</dbUserName>
     <dbPassword>abc!@#</dbPassword>
     <beans>
-        <bean table="users" beanName="Users" beanJavaFilePath="F:\workspace\DataBaseBeanGenerator\src\model" packageName="model" />
-        <bean table="videolive" beanName="VideoLive" beanJavaFilePath="F:\workspace\DataBaseBeanGenerator\src\model" packageName="model" />
+        <bean table="users" beanName="Users" beanJavaFilePath="E:\workspace\tour\tour-server\src\main\java\model\user" packageName="model.user" />
     </beans>
 </property>

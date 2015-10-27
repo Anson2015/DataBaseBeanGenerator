@@ -31,11 +31,11 @@ public class DataBaseUtil {
 	private static String changeDBType2JType(String db){
 		if(db.contains("int")){
 			if(db.contains("8")){
-				return "long";
+				return "Long";
 			}else{
-				return "int";
+				return "Integer";
 			}
-		}else if(db.contains("float")||db.contains("money")){
+		}else if(db.contains("Float")||db.contains("money")){
 			return "float";
 		}else if(db.contains("timestamp")||db.contains("date")){
 			return "Date";
